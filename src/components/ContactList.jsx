@@ -1,5 +1,5 @@
 // Contact list
-
+import ContactRow from "./ContactRow";
 import React from "react";
 
 // Dummy data to simulate contacts
@@ -9,6 +9,7 @@ export const dummyContacts = [
   { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
 ];
 
+// ContactList component receives contacts as a prop
 export default function ContactList({ contacts }) {
   return (
     <table>
@@ -18,13 +19,15 @@ export default function ContactList({ contacts }) {
         </tr>
       </thead>
       <tbody>
-        {contacts.map((contact) => (
-          <tr key={contacts.id}>
-            <td>{contacts.name}</td>
-            <td>{contacts.email}</td>
-            <td>Phone</td>
-          </tr>
-        ))}
+        <tr>
+          <td>Name</td>
+          <td>Email</td>
+          <td>Phone</td>
+        </tr>
+        {/* Map over contacts passed as a prop */}
+        {contacts.map((contact) => {
+          return <ContactRow key={contact.id} contact={contact} />;
+        })}
       </tbody>
     </table>
   );

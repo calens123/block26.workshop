@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     <>
-      <ContactList />
+      <ContactList contacts={contacts} />
     </>
   );
 }

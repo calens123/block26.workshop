@@ -1,7 +1,7 @@
 import React from "react";
 import ContactRow from "./ContactRow";
 
-export default function ContactList({ setSelectedContactId, contacts }) {
+export default function ContactList({ contacts, setSelectedContactId }) {
   return (
     <table>
       <thead>
@@ -15,6 +15,7 @@ export default function ContactList({ setSelectedContactId, contacts }) {
         </tr>
       </thead>
       <tbody>
+        {/* Map over contacts and render a ContactRow for each */}
         {contacts.map((contact) => (
           <ContactRow
             key={contact.id}
